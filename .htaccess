@@ -227,6 +227,12 @@ SetEnvIf X-Forwarded-Proto https HTTPS=on
     AddCharset utf-8 .atom .css .js .json .rss .vtt .webapp .xml
 </IfModule>
 
+##### Enabling CORS on subdomain
+<FilesMatch "\.(ttf|ttc|otf|eot|woff|font.css)$">
+  <IfModule mod_headers.c>
+    Header set Access-Control-Allow-Origin "*" 
+  </IfModule>
+</FilesMatch>
 
 ##### Disable ETags http://developer.yahoo.com/performance/rules.html#etags #####
 
